@@ -4,6 +4,7 @@
 
 layout: default
 title: TaigaChat
+show_downloads: true
 ---
 
 # Mission

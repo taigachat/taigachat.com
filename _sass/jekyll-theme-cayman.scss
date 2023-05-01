@@ -1,7 +1,14 @@
 @import "normalize";
 @import "rouge-github";
 @import "variables";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
 
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
@@ -28,7 +35,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
@@ -69,7 +76,7 @@ a {
   border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.3rem;
+  border-radius: 0.75rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 
   &:hover {
@@ -143,7 +150,7 @@ a {
   background: linear-gradient(90deg, #45137c, #0e1430);
 }
 
-.project-name {
+.page-title {
   margin-top: 0;
   margin-bottom: 0.1rem;
 
@@ -158,6 +165,10 @@ a {
   @include small {
     font-size: 1.75rem;
   }
+}
+
+.taiga-chat-title-2 {
+  font-variation-settings: 'wght' 300;
 }
 
 .project-tagline {
@@ -334,7 +345,8 @@ a {
     -webkit-overflow-scrolling: touch;
 
     th {
-      font-weight: bold;
+      font-weight: normal;
+      font-variation-settings: 'wght' 700;
     }
 
     th,
@@ -385,6 +397,10 @@ a {
   @include small {
     font-size: 0.9rem;
   }
+}
+
+.site-footer-link {
+  padding: 0 4px;
 }
 
 .site-footer-owner {
