@@ -23,10 +23,11 @@
         {% assign title = page.title | default: site.title | default: site.github.repository_name %}
         {% if title == "TaigaChat" %}
           <h1 class="page-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+          <h2 class="page-description">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
         {% else %}
           <h1 class="page-title">{{ title }}</h1>
+          <h2 class="page-description">{{ page.description | default: "" }}</h2>
         {% endif %}
-        <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
         {% if site.github.is_project_page %}
           <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
         {% endif %}
@@ -48,12 +49,17 @@
             {% endif %}
             <a class="btn" href="/open-source">Open Source</a>
             <a class="btn" href="/blog">Blog</a>
-            <a class="btn" href="/screen-shots">Screenshots</a>
+            <a class="btn" href="/screenshots">Screenshots</a>
         </div>
       </header>
     </div>
 
     <main id="content" class="main-content" role="main">
+      {% if page.date %}
+        <div>
+          Published: {{ page.date | date_to_string }}
+        </div>
+      {% endif %}
       {{ content }}
 
       <footer class="site-footer">
