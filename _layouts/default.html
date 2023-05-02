@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
 
-{% seo %}
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+        {% seo %}
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <div class="header-container">
-      <div class="header-background">
-        <div class="header-background-2"></div>
-      </div>
-      <header class="page-header" role="banner">
-        {% assign title = page.title | default: site.title | default: site.github.repository_name %}
-        {% if title == "TaigaChat" %}
-          <h1 class="page-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
-          <h2 class="page-description">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-        {% else %}
-          <h1 class="page-title">{{ title }}</h1>
-          <h2 class="page-description">{{ page.description | default: "" }}</h2>
-        {% endif %}
-        {% if site.github.is_project_page %}
-          <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-        {% endif %}
-        {% if page.show_downloads %}
-          <a href="https://cdn.taigachat.se/versions/TaigaChat.msi" class="btn">Download .msi (Windows)</a>
-          <a href="/downloads" class="btn">Other Platforms</a>
-          <a href="https://cdn.taigachat.se/versions/build" class="btn">Open TaigaChat Web</a>
-        {% endif %}
-        {% if false %}
-          <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-          <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-        {% endif %}
-        <div>
-            {% if page.name != "index.md" %}
-                <a class="btn" href="/">Introduction</a>
-            {% endif %}
-            {% if page.show_downloads != true %}
-                <a class="btn" href="/downloads">Downloads</a>
-            {% endif %}
-            <a class="btn" href="/open-source">Open Source</a>
-            <a class="btn" href="/blog">Blog</a>
-            <a class="btn" href="/screenshots">Screenshots</a>
+        {% assign cssurl = '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url %}
+        <link rel="preload" href="{{ cssurl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ cssurl }}"></noscript>
+        {% include head-custom.html %}
+        <style>
+            .page-description {
+                opacity: 0.7;
+                margin-top: 0px;
+                font-size: 1rem;
+            }
+            h1, h2, .page-header {
+                text-align: center;
+            }
+            .site-footer {
+                text-align: center;
+            }
+            #skip-to-content {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <a id="skip-to-content" href="#content">Skip to the content.</a>
+        <div class="header-container">
+            <div class="header-background">
+                <div class="header-background-2"></div>
+            </div>
+            <header class="page-header" role="banner">
+                {% assign title = page.title | default: site.title | default: site.github.repository_name %}
+                {% if title == "TaigaChat" %}
+                <h1 class="page-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+                <h2 class="page-description">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+                {% else %}
+                <h1 class="page-title">{{ title }}</h1>
+                <h2 class="page-description">{{ page.description | default: "" }}</h2>
+                {% endif %}
+                {% if site.github.is_project_page %}
+                <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+                {% endif %}
+                {% if page.show_downloads %}
+                <a href="https://cdn.taigachat.se/versions/TaigaChat.msi" class="btn">Download .msi (Windows)</a>
+                <a href="/downloads" class="btn">Other Platforms</a>
+                <a href="https://cdn.taigachat.se/versions/build" class="btn">Open TaigaChat Web</a>
+                {% endif %}
+                {% if false %}
+                <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+                <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+                {% endif %}
+                <div>
+                    {% if page.name != "index.md" %}
+                    <a class="btn" href="/">Introduction</a>
+                    {% endif %}
+                    {% if page.show_downloads != true %}
+                    <a class="btn" href="/downloads">Downloads</a>
+                    {% endif %}
+                    <a class="btn" href="/open-source">Open Source</a>
+                    <a class="btn" href="/blog">Blog</a>
+                    <a class="btn" href="/screenshots">Screenshots</a>
+                </div>
+            </header>
         </div>
-      </header>
-    </div>
 
-    <main id="content" class="main-content" role="main">
-      {% if page.date %}
-        <div>
-          Published: {{ page.date | date_to_string }}
-        </div>
-      {% endif %}
-      {{ content }}
+        <main id="content" class="main-content" role="main">
+            {% if page.date %}
+            <div>
+                Published: {{ page.date | date_to_string }}
+            </div>
+            {% endif %}
+            {{ content }}
 
-      <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
-        <span class="site-footer-link"><a href="/privacy-policy">Privacy Policy</a></span>
-        <span class="site-footer-link"><a href="/tos">Terms of Service</a></span>
-        <span class="site-footer-link"><a href="/contact">Contact</a></span>
-        <span class="site-footer-link"><a href="">GitHub</a></span>
-      </footer>
-    </main>
-  </body>
+            <footer class="site-footer">
+                {% if site.github.is_project_page %}
+                <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+                {% endif %}
+                <span class="site-footer-link"><a href="/privacy-policy">Privacy Policy</a></span>
+                <span class="site-footer-link"><a href="/tos">Terms of Service</a></span>
+                <span class="site-footer-link"><a href="/contact">Contact</a></span>
+                <span class="site-footer-link"><a href="https://github.com/taigachat">GitHub</a></span>
+            </footer>
+        </main>
+    </body>
 </html>
 
