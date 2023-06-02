@@ -54,7 +54,7 @@ Because each homeserver in Matrix must have a complete copy of each chat room
 that the users have joined, joining a new chat room can sometimes take entire minutes.
 TaigaChat does not have this deficiency.
 
-# Can it be fixed?
+# Can it be Fixed?
 It is too late now for Matrix to change their entire approach to providing
 a decentralized service. Which is why I maintain that Matrix is not the future.
 
