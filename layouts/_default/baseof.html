@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}">
+    <head>
+        <meta charset="UTF-8">
+        {{ $title := .Title | default .Site.Title  }}
+
+        <title>{{ $title }}</title>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <meta name="description" content="{{ .Description | default (.Param "Description") }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="{{ site.Params.TwitterSite }}" />
+        {{ if .IsHome }}
+            <meta name="og:title" content="{{ site.Title }}" />
+            <meta property="og:type" content="website" />
+            <meta property="og:description" content="{{ site.Params.Description }}" />
+            <meta property="og:url" content="{{ site.BaseURL }}" />
+            <meta name="og:image" content="{{ site.Params.Image }}" />
+            <meta name="twitter:creator" content="{{ site.Params.TwitterSite }}" />
+            <meta name="twitter:title" content="{{ site.Title }}" />
+            {{ if isset site.Params "TwitterImage" }}
+                <meta name="twitter:image" content="{{ site.Params.TwitterImage }}" />
+            {{ else }}
+                <meta name="twitter:image" content="{{ site.Params.Image }}" />
+            {{ end }}
+        {{ else }}
+            <meta name="og:title" content="{{ .Page.Title }}" />
+            {{ if isset .Params "og_type" }}
+                <meta property="og:type" content="{{ .Params.og_type }}" />
+            {{ else }}
+                <meta property="og:type" content="website" />
+            {{ end }}
+            <meta property="og:description" content="{{ .Params.Description }}" />
+            <meta property="og:url" content="{{ .Page.Permalink }}" />
+            {{ if isset .Params "Featured_image" }}
+                <meta name="og:image/" content="{{ .Params.Featured_image }}" />
+                <meta name="twitter:image" content="{{ .Params.Featured_image }}" />
+            {{ else }}
+                <meta name="og:image" content="{{ site.Params.Image }}" />
+                <meta name="twitter:image" content="{{ site.Params.Image }}" />
+            {{ end }}
+            {{ if isset .Params "Author_twitter_handle" }}
+                <meta name="twitter:creator" content="{{ .Params.Author_twitter_handle }}" />
+            {{ else }}
+                <meta name="twitter:creator" content="{{ site.Params.TwitterSite }}" />
+            {{ end }}
+            <meta name="twitter:title" content="{{ .Page.Title }}" />
+        {{- end }}
+
+
+        <style type="text/css">
+            .page-description {
+                opacity: 0.7;
+                margin-top: 0px;
+                font-size: 1rem;
+            }
+            h1, h2, .page-header {
+                text-align: center;
+            }
+            .site-footer {
+                text-align: center;
+            }
+            #skip-to-content {
+                display: none;
+            }
+            {{ with resources.Get "main.css" }}
+                {{ .Content | safeCSS }}
+            {{ end }}
+        </style>
+    </head>
+    <body>
+        <a id="skip-to-content" href="#content">Skip to the content.</a>
+        <div class="header-container">
+            <div class="header-background">
+                <div class="header-background-2"></div>
+            </div>
+            <header class="page-header" role="banner">
+                {{ if eq $title "TaigaChat" }}
+                <h1 class="page-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+                <h2 class="page-description">{{ .Description | default (.Param "Description") }}</h2>
+                {{ else }}
+                <h1 class="page-title">{{ $title }}</h1>
+                <h2 class="page-description">{{ .Description | default "" }}</h2>
+                {{ end }}
+                <a href="{{ site.Params.Repo }}" class="btn">View on GitHub</a>
+
+                {{ if 1 }}
+                <a href="https://cdn.taigachat.se/versions/TaigaChat.msi" class="btn">Download .msi (Windows)</a>
+                <a href="/downloads" class="btn">Other Platforms</a>
+                <a href="https://cdn.taigachat.se/versions/build" class="btn">Open TaigaChat Web</a>
+                {{ end }}
+                <div>
+                    {{ if eq .Name "index.md" }}
+                    <a class="btn" href="/">Introduction</a>
+                    {{ end }}
+                    {{ if 1 }}
+                    <a class="btn" href="/downloads">Downloads</a>
+                    {{ end }}
+                    <a class="btn" href="/open-source">Open Source</a>
+                    <a class="btn" href="/blog">Blog</a>
+                    <a class="btn" href="/screenshots">Screenshots</a>
+                </div>
+            </header>
+        </div>
+
+        <main id="content" class="main-content" role="main">
+            {{ if .Date }}
+            <div>
+                Published: {{ .Date | time.Format ":date_full" }}
+            </div>
+            {{ end }}
+            {{ .Content }}
+
+            <footer class="site-footer">
+                <span class="site-footer-link"><a href="/privacy-policy">Privacy Policy</a></span>
+                <span class="site-footer-link"><a href="/tos">Terms of Service</a></span>
+                <span class="site-footer-link"><a href="/contact">Contact</a></span>
+                <span class="site-footer-link"><a href="{{ site.Params.Repo }}">GitHub</a></span>
+            </footer>
+        </main>
+    </body>
+</html>
+
