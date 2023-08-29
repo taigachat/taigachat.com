@@ -2,7 +2,7 @@
 <html lang="{{ site.LanguageCode }}">
     <head>
         <meta charset="UTF-8">
-        {{ $title := .Title | default .Site.Title  }}
+        {{ $title := .Title | default .Site.Title }}
 
         <title>{{ $title }}</title>
         <link rel="icon" type="image/png" href="/favicon.png">
@@ -59,92 +59,63 @@
                 {{ .Content | safeCSS }}
             {{ end }}
         </style>
+        {{ block "head" . }}
+        {{ end }}
     </head>
     <body>
         <a id="skip-to-content" href="#content">Skip to the content.</a>
         <div>
-        <header id="main-navbar">
-            <div id="navbar-left">
-                <img id="navbar-logo" src="/favicon.png"></img>
-                <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
-            </div>
-            <nav id="navbar-items">
-                <a href="/downloads">Downloads</a>
-                <a href="/open-source">Open Source</a>
-                <a href="/blog">Blog</a>
-                <a href="/business">Business</a>
-            </nav>
-            <a class="flashy-button-small" href="https://cdn.taigachat.se/versions/build">
-                <div class="flashy-button">
-                    <div class="flashy-button-bg"></div>
-                    <div class="flashy-button-content">Open Web App</div>
-                </div>
-            </a>
-        </header>
-        <div class="spacer"></div>
-        <!--<div class="header-container">
-            <div class="header-background">
-                <div class="header-background-2"></div>
-            </div>
-            <header class="page-header" role="banner">
-                {{ if eq $title "TaigaChat" }}
-                <h1 class="page-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
-                <h2 class="page-description">{{ .Description | default (.Param "Description") }}</h2>
-                {{ else }}
-                <h1 class="page-title">{{ $title }}</h1>
-                <h2 class="page-description">{{ .Description | default "" }}</h2>
-                {{ end }}
-                <a href="{{ site.Params.Repo }}" class="btn">View on GitHub</a>
-
-                {{ if 1 }}
-                <a href="https://cdn.taigachat.se/versions/TaigaChat.msi" class="btn">Download .msi (Windows)</a>
-                <a href="/downloads" class="btn">Other Platforms</a>
-                <a href="https://cdn.taigachat.se/versions/build" class="btn">Open TaigaChat Web</a>
-                {{ end }}
-                <div>
-                    {{ if eq .Name "index.md" }}
-                    <a class="btn" href="/">Introduction</a>
-                    {{ end }}
-                    {{ if 1 }}
-                    <a class="btn" href="/downloads">Downloads</a>
-                    {{ end }}
-                    <a class="btn" href="/open-source">Open Source</a>
-                    <a class="btn" href="/blog">Blog</a>
-                    <a class="btn" href="/screenshots">Screenshots</a>
-                </div>
+            <header id="main-navbar">
+                <a id="navbar-left" href="/">
+                    <img id="navbar-logo" src="/favicon.png"></img>
+                    <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+                </a>
+                <nav id="navbar-items">
+                    <a href="/downloads">Downloads</a>
+                    <a href="/open-source">Open Source</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/business">Business</a>
+                </nav>
+                <a class="flashy-button-small" href="https://cdn.taigachat.se/versions/build">
+                    <div class="flashy-button">
+                        <div class="flashy-button-bg"></div>
+                        <div class="flashy-button-content">Open Web App</div>
+                    </div>
+                </a>
             </header>
-        </div>-->
 
             <main id="content" class="main-content" role="main">
+                <!-- TODO: Move to another tempalte -->
                 {{ if .Date }}
                 <div>
                     Published: {{ .Date | time.Format ":date_full" }}
                 </div>
                 {{ end }}
-                {{ .Content }}
+                {{ block "main" . }}
+                {{ end }}
             </main>
         </div>
         <footer id="main-footer">
             <div id="main-footer-content">
                 <div id="main-footer-links">
-                    <div class="main-footer-links-column">
+                    <nav class="main-footer-links-column">
                         <b>Product</b>
                         <a class="main-footer-link" href="">Features</a>
                         <a class="main-footer-link" href="">Hosting</a>
                         <a class="main-footer-link" href="">Support</a>
-                    </div>
-                    <div class="main-footer-links-column">
+                    </nav>
+                    <nav class="main-footer-links-column">
                         <b>About Us</b>
                         <a class="main-footer-link" href="">Blog</a>
                         <a class="main-footer-link" href="">Contact</a>
                         <a class="main-footer-link" href="">Features</a>
-                    </div>
-                    <div class="main-footer-links-column">
+                    </nav>
+                    <nav class="main-footer-links-column">
                         <b>Resources</b>
                         <a class="main-footer-link" href="">Open Source</a>
                         <a class="main-footer-link" href="">Privacy Policy</a>
                         <a class="main-footer-link" href="">Terms of Service</a>
-                    </div>
+                    </nav>
 
                 </div>
                 <div id="main-footer-copyright">© 2023 TaigaChat Studios</div>

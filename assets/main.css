@@ -49,22 +49,28 @@ body {
     height: 64px;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 16px;
+    padding: 0px 22px;
 }
 
 #navbar-items {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
+    max-width: 700px;
 }
 #navbar-items a {
     padding: 0px 12px;
-    color: #777777;
+    color: #DDDDDD;
 }
 
 #navbar-left {
     display: flex;
     align-items: center;
+    color: white;
+}
+
+#navbar-left:hover {
+    text-decoration: none;
 }
 
 #navbar-logo {
@@ -104,7 +110,7 @@ a#skip-to-content:focus {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding-top: 120px;
+    padding-top: 130px;
     font-variation-settings: 'wght' 700;
 }
 #landing-introduction-title {
@@ -374,6 +380,8 @@ h2.page-description {
     }
 }
 
+/* TODO: All media content rules could be moved into their own filed such that we may skip including them for HTML based pages. */
+
 .main-content kbd {
     background-color: #fafbfc;
     border: 1px solid #c6cbd1;
@@ -586,6 +594,7 @@ h2.page-description {
     width: 100%;
     border-bottom: 1px solid #414141;
     padding-bottom: 12px;
+    color: #DDDDDD;
 }
 
 .main-footer-links-column {
@@ -601,6 +610,6 @@ h2.page-description {
 
 #main-footer-copyright {
     padding: 12px 80px;
-    color: #555555;
+    color: #444444;
     width: 100%;
 }

@@ -1,0 +1,27 @@
+{{ define "head" }}
+    <style type="text/css">
+        #main-404-container {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+        #main-404 {
+            font-size: 70px;
+            font-variation-settings: 'wght' 700;
+            background: linear-gradient(75deg, #0077FF, #00E7D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+{{ end }}
+{{ define "main" }}
+    <div id="main-404-container">
+        <div id="main-404">
+            404
+        </div>
+        <div>
+            The desired page could not be found
+        </div>
+    </div>
+{{ end }}
+
