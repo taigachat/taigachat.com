@@ -67,7 +67,7 @@
         <div>
             <header id="main-navbar">
                 <a id="navbar-left" href="/">
-                    <img id="navbar-logo" src="/favicon.png"></img>
+                    <img id="navbar-logo" alt="website home button" src="/taiga.svg"></img>
                     <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
                 </a>
                 <nav id="navbar-items">
@@ -85,12 +85,6 @@
             </header>
 
             <main id="content" class="main-content" role="main">
-                <!-- TODO: Move to another tempalte -->
-                {{ if .Date }}
-                <div>
-                    Published: {{ .Date | time.Format ":date_full" }}
-                </div>
-                {{ end }}
                 {{ block "main" . }}
                 {{ end }}
             </main>
@@ -100,32 +94,31 @@
                 <div id="main-footer-links">
                     <nav class="main-footer-links-column">
                         <b>Product</b>
-                        <a class="main-footer-link" href="">Features</a>
-                        <a class="main-footer-link" href="">Hosting</a>
-                        <a class="main-footer-link" href="">Support</a>
+                        <a class="main-footer-link" href="/features">Features</a>
+                        <a class="main-footer-link" href="/hosting">Hosting</a>
+                        <a class="main-footer-link" href="/support">Support</a>
                     </nav>
                     <nav class="main-footer-links-column">
                         <b>About Us</b>
-                        <a class="main-footer-link" href="">Blog</a>
-                        <a class="main-footer-link" href="">Contact</a>
-                        <a class="main-footer-link" href="">Features</a>
+                        <a class="main-footer-link" href="/blog">Blog</a>
+                        <a class="main-footer-link" href="/contact">Contact</a>
+                        <a class="main-footer-link" href="/features">Features</a>
                     </nav>
                     <nav class="main-footer-links-column">
                         <b>Resources</b>
-                        <a class="main-footer-link" href="">Open Source</a>
-                        <a class="main-footer-link" href="">Privacy Policy</a>
-                        <a class="main-footer-link" href="">Terms of Service</a>
+                        <a class="main-footer-link" href="/open-source">Open Source</a>
+                        <a class="main-footer-link" href="/privacy-policy">Privacy Policy</a>
+                        <a class="main-footer-link" href="/terms-of-service">Terms of Service</a>
                     </nav>
-
                 </div>
-                <div id="main-footer-copyright">© 2023 TaigaChat Studios</div>
+                <div id="main-footer-rights-socials">
+                    <div id="main-footer-copyright">© 2023 TaigaChat Studios</div>
+                    <div>
+                        <a href="/twitter"><img class="main-footer-right-socials-link" src="/logo-x.svg" loading="lazy"></img></a>
+                        <a href="/instagram"><img class="main-footer-right-socials-link"src="/logo-instagram.svg" loading="lazy"></img></a>
+                    </div>
+                </div>
             </div>
-            <!--
-            <span class="site-footer-link"><a href="/privacy-policy">Privacy Policy</a></span>
-            <span class="site-footer-link"><a href="/tos">Terms of Service</a></span>
-            <span class="site-footer-link"><a href="/contact">Contact</a></span>
-            <span class="site-footer-link"><a href="{{ site.Params.Repo }}">GitHub</a></span>
-            -->
         </footer>
     </body>
 </html>

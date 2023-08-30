@@ -74,8 +74,9 @@ body {
 }
 
 #navbar-logo {
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 #navbar-title {
@@ -553,7 +554,8 @@ h2.page-description {
 
 #main-footer {
     width: 100%;
-    background-color: #111111;
+    /*background-color: #111111;*/
+    background: linear-gradient(#111111, #11111A);
     padding-top: 2rem;
     margin-top: 2rem;
     display: flex;
@@ -608,8 +610,20 @@ h2.page-description {
     padding-top: 10px;
 }
 
-#main-footer-copyright {
+#main-footer-rights-socials {
     padding: 12px 80px;
     color: #444444;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-footer-right-socials-link {
+    width: 20px;
+    height: 20px;
+    margin: 0px 4px;
+}
+
+.main-footer-right-socials-link:hover {
+    filter: brightness(1.5);
 }
