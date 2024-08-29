@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TaigaChat</title>
+    <link>http://example.org/</link>
+    <description>Recent content on TaigaChat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://example.org/screenshots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/screenshots/</guid>
+      <description>Screenshots </description>
+    </item>
+    
+    <item>
+      <title>Downloads</title>
+      <link>http://example.org/downloads/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/downloads/</guid>
+      <description>Windows .msi
+Web</description>
+    </item>
+    
+    <item>
+      <title>TaigaChat</title>
+      <link>http://example.org/old_index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/old_index/</guid>
+      <description>Mission The mission of TaigaChat is to create a platform where users can easily &amp;amp; safely communicate with large groups of people, colloquially known as an online community. For an online community to work in the long term sustainably, the community must be able to control all aspects of its community. The current unfortunate status quo is that online tech giants are able to control, everything. Leaving very little up to the individual to decide.</description>
+    </item>
+    
+  </channel>
+</rss>
