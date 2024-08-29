@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block head %}
     <style type="text/css">
-        #the-404-container {
+        #the-downloads-container {
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
         }
-        #the-404 {
-            font-size: 70px;
+        #the-downloads-text {
+            font-size: 60px;
             font-variation-settings: 'wght' 700;
             background: linear-gradient(75deg, #0077FF, #00E7D4);
             -webkit-background-clip: text;
@@ -16,13 +16,7 @@
     </style>
 {% endblock head %}
 {% block content %}
-    <div id="the-404-container">
-        <div id="the-404">
-            404
-        </div>
-        <div>
-            The desired page could not be found
-        </div>
-    </div>
+<div id="the-downloads-container">
+    <h1 id="the-downloads-text">Downloads</h1>
+</div>
 {% endblock content %}
-

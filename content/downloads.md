@@ -1,5 +1,6 @@
 +++
 title = "Downloads"
+template = "downloads.html"
 +++
 
 [Windows .msi](https://cdn.taigachat.se/versions/TaigaChat.msi)  
