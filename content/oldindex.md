@@ -1,8 +1,7 @@
----
-layout: default
-title: TaigaChat
-show_downloads: true
----
++++
+title = "Old TaigaChat Home"
++++
+
 
 # Mission
 The mission of TaigaChat is to create a platform where users can easily & safely communicate with large

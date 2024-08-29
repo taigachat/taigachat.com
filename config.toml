@@ -1,0 +1,23 @@
+base_url = "https://taigachat.com"
+
+title = 'TaigaChat'
+
+description = 'A decentralized app for community-oriented communication. Build an online presence where only you can define the rules!'
+
+default_language = 'en-us'
+
+minify_html = true
+
+compile_sass = false
+
+build_search_index = false
+
+[markdown]
+highlight_code = false
+
+[extra]
+twitter = "@taigachatcom"
+#twitter_image = "favicon.png"
+repo = "https://github.com/taigachat"
+
+

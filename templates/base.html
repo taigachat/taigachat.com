@@ -1,66 +1,49 @@
 <!DOCTYPE html>
-<html lang="{{ site.LanguageCode }}">
+<html lang="{{ lang }}">
     <head>
         <meta charset="UTF-8">
-        {{ $title := .Title | default .Site.Title }}
+        {%- set title = page.title | default(value=section.title | default(value = config.title)) -%}
+        {%- set description = page.description | default(value=section.description | default(value = config.description)) -%}
 
-        <title>{{ $title }}</title>
+        {% block title %}
+        <title>{{ title }}</title>
+        {% endblock %}
+
         <link rel="icon" type="image/png" href="/favicon.png">
-        <meta name="description" content="{{ .Description | default (.Param "Description") }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#157878">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="{{ site.Params.TwitterSite }}" />
-        {{ if .IsHome }}
-            <meta name="og:title" content="{{ site.Title }}" />
-            <meta property="og:type" content="website" />
-            <meta property="og:description" content="{{ site.Params.Description }}" />
-            <meta property="og:url" content="{{ site.BaseURL }}" />
-            <meta name="og:image" content="{{ site.Params.Image }}" />
-            <meta name="twitter:creator" content="{{ site.Params.TwitterSite }}" />
-            <meta name="twitter:title" content="{{ site.Title }}" />
-            {{ if isset site.Params "TwitterImage" }}
-                <meta name="twitter:image" content="{{ site.Params.TwitterImage }}" />
-            {{ else }}
-                <meta name="twitter:image" content="{{ site.Params.Image }}" />
-            {{ end }}
-        {{ else }}
-            <meta name="og:title" content="{{ .Page.Title }}" />
-            {{ if isset .Params "og_type" }}
-                <meta property="og:type" content="{{ .Params.og_type }}" />
-            {{ else }}
-                <meta property="og:type" content="website" />
-            {{ end }}
-            <meta property="og:description" content="{{ .Params.Description }}" />
-            <meta property="og:url" content="{{ .Page.Permalink }}" />
-            {{ if isset .Params "Featured_image" }}
-                <meta name="og:image/" content="{{ .Params.Featured_image }}" />
-                <meta name="twitter:image" content="{{ .Params.Featured_image }}" />
-            {{ else }}
-                <meta name="og:image" content="{{ site.Params.Image }}" />
-                <meta name="twitter:image" content="{{ site.Params.Image }}" />
-            {{ end }}
-            {{ if isset .Params "Author_twitter_handle" }}
-                <meta name="twitter:creator" content="{{ .Params.Author_twitter_handle }}" />
-            {{ else }}
-                <meta name="twitter:creator" content="{{ site.Params.TwitterSite }}" />
-            {{ end }}
-            <meta name="twitter:title" content="{{ .Page.Title }}" />
-        {{- end }}
+        <link rel="icon" type="image/png" href="/favicon.png">
+                <meta name="description" content="{{ description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+        <!-- Twitter and Facebook -->
+        <meta name="og:title" content="{{ title }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:url" content="{{ config.base_url }}" />
+        <meta name="og:image" content="/favicon.png" />
+        <meta name="twitter:creator" content="{{config.extra.twitter}}" />
+        <meta name="twitter:title" content="{{ title }}" />
+        <meta name="twitter:image" content="/favicon.png" />
 
         <style type="text/css">
-            {{ with resources.Get "normalize.css" }}
-                {{ .Content | safeCSS }}
-            {{ end }}
-            {{ with resources.Get "main.css" }}
-                {{ .Content | safeCSS }}
-            {{ end }}
+            {{ load_data(path="static/normalize.min.css", format="plain") | safe }}
+            {% if config.mode != "serve" %}
+                {% set main_css = load_data(path="/static/main.css", format="plain") %}
+                {{ main_css | safe }}
+            {% endif %}
         </style>
-        {{ block "head" . }}
-        {{ end }}
+
+        {# We embed the file if not running in serve mode. #}
+        {% if config.mode == "serve" %}
+             <link rel="stylesheet" href="/main.css">
+        {% endif %}
+
+        {% block head %} {% endblock %}
     </head>
     <body>
         <div id="main-gradient-1"></div>
@@ -87,8 +70,7 @@
             </header>
 
             <main id="content" class="main-content" role="main">
-                {{ block "main" . }}
-                {{ end }}
+                {% block content %} {% endblock %}
             </main>
         </div>
         <footer id="main-footer">
@@ -114,7 +96,7 @@
                     </nav>
                 </div>
                 <div id="main-footer-rights-socials">
-                    <div id="main-footer-copyright">© 2023 TaigaChat Studios</div>
+                    <div id="main-footer-copyright">© 2024 TaigaChat Studios</div>
                     <div>
                         <a href="/twitter"><img class="main-footer-right-socials-link" alt="X logo" src="/logo-x.svg" loading="lazy"></img></a>
                         <a href="/instagram"><img class="main-footer-right-socials-link" alt="Instagram logo" src="/logo-instagram.svg" loading="lazy"></img></a>

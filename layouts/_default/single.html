@@ -1,9 +1,0 @@
-<!-- is this the best place for this? -->
-{{ if .Date }}
-    <div>
-        Published: {{ .Date | time.Format ":date_full" }}
-    </div>
-{{ end }}
-{{ define "main" }}
-    {{ .Content }}
-{{ end }}
