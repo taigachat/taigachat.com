@@ -18,6 +18,7 @@ highlight_code = false
 [extra]
 twitter = "@taigachatcom"
 #twitter_image = "favicon.png"
-repo = "https://github.com/taigachat"
+repo = "https://github.com/taigachat/taigachat"
+gh = "https://github.com/taigachat"
 
 
