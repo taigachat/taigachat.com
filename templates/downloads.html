@@ -1,22 +1,66 @@
 {% extends "base.html" %}
 {% block head %}
     <style type="text/css">
-        #the-downloads-container {
+        #the-downloads__container {
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
         }
-        #the-downloads-text {
+        #the-downloads__text {
             font-size: 60px;
             font-variation-settings: 'wght' 700;
             background: linear-gradient(75deg, #0077FF, #00E7D4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        #the-downloads__logos {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        .the-downloads__card__logo {
+            margin: 20px;
+        }
+        #the-downloads__logos img {
+            width: 70px;
+            height: 70px;
+        }
+        #the-downloads__logos span {
+            line-height: 70px;
+            font-size: 65px;
+        }
+        .the-downloads__card {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+        .the-downloads__card:hover {
+            text-decoration: none;
+        }
     </style>
 {% endblock head %}
 {% block content %}
-<div id="the-downloads-container">
-    <h1 id="the-downloads-text">Downloads</h1>
+<div id="the-downloads__container">
+    <h1 id="the-downloads__text">Downloads</h1>
+    <div id="the-downloads__logos">
+        <a class="the-downloads__card" href="https://cdn.taigachat.se/versions/TaigaChat.AppImage">
+            <img class="the-downloads__card__logo" src="logo-linux.svg"></img>
+            <div class="the-downloads__card__title">
+                Linux
+            </div>
+        </a>
+        <a class="the-downloads__card" href="https://cdn.taigachat.se/versions/TaigaChat.msi">
+            <img class="the-downloads__card__logo" src="logo-windows.svg"></img>
+            <div class="the-downloads__card__title">
+                Windows
+            </div>
+        </a>
+        <a class="the-downloads__card" id="the-downloads__logos__web" href="https://cdn.taigachat.se/versions/dist">
+            <span class="the-downloads__card__logo">🌐</span>
+            <div class="the-downloads__card__title">
+                Web
+            </div>
+        </a>
+    </div>
 </div>
 {% endblock content %}

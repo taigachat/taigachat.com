@@ -38,6 +38,7 @@
             {% endif %}
         </style>
 
+
         {# We embed the file if not running in serve mode. #}
         {% if config.mode == "serve" %}
              <link rel="stylesheet" href="/main.css">
@@ -50,23 +51,34 @@
         <div id="main-gradient-2"></div>
         <a id="skip-to-content" href="#content">Skip to the content.</a>
         <div>
-            <header id="main-navbar">
-                <a id="navbar-left" href="/">
-                    <img id="navbar-logo" alt="website home button" src="/taiga.svg"></img>
-                    <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
-                </a>
-                <nav id="navbar-items">
-                    <a href="/downloads">Downloads</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/contact#inquiries">Business</a>
+            <header id="the-header">
+                <div id="the-navbar">
+                    <a class="navbar-left" href="/">
+                        <img id="navbar-logo" alt="website home button" src="/taiga.svg"></img>
+                        <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+                    </a>
+                    <nav id="navbar-items">
+                        {% include "navbar.html" %}
+                    </nav>
+                    <a class="flashy-button-small" href="https://cdn.taigachat.se/versions/dist">
+                        <div class="flashy-button">
+                            <div class="flashy-button-bg"></div>
+                            <div class="flashy-button-content">Open Web App</div>
+                        </div>
+                    </a>
+                </div>
+                <div id="the-mobile-navbar">
+                    <a class="navbar-left" href="/">
+                        <img id="navbar-logo" alt="website home button" src="/taiga.svg"></img>
+                        <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
+                    </a>
+                    <a id="navbar-more" onclick="document.getElementById('navbar-mobile-items').classList.toggle('shown')">
+                        ≡
+                    </a>
+                </div>
+                <nav id="navbar-mobile-items">
+                    {% include "navbar.html" %}
                 </nav>
-                <a class="flashy-button-small" href="https://cdn.taigachat.se/versions/build">
-                    <div class="flashy-button">
-                        <div class="flashy-button-bg"></div>
-                        <div class="flashy-button-content">Open Web App</div>
-                    </div>
-                </a>
             </header>
 
             <main id="content" class="main-content" role="main">

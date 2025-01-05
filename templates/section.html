@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+{% include "content.css.html" %}
+<style type="text/css">
+    .section-entry {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section-entry h2 {
+        display: flex;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+{{ section.content | safe }}
+{% for post in section.pages %}
+<div class="section-entry">
+    <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+    <div>{{post.date}}</div>
+</div>
+{% endfor %}
+{% endblock content %}
+
