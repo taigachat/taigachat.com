@@ -10,8 +10,8 @@ aspects of its community. The current unfortunate status quo is that online tech
 to control, everything. Leaving very little up to the individual to decide. TaigaChat seeks to remedy this
 situation by giving back control.
 
-# We Promise
-In TaigaChat, tyrrany is impossible. We as the creators are:
+# We Aim Higher
+In TaigaChat, tyranny is impossible. We as the creators are:
 1. Unable to censor your community
 2. Unable to globally ban users or lock accounts
 3. Unable to eaves-drop on communities
