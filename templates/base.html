@@ -9,30 +9,31 @@
         <title>{{ title }}</title>
         {% endblock %}
 
-        <link rel="icon" type="image/png" href="{{get_url(path='favicon.png')}}">
+        <link rel="icon" type="image/png" href="{{ get_url(path='favicon.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#157878">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="description" content="{{ description }}">
 
         <!-- Twitter and Facebook -->
         <meta name="og:title" content="{{ title }}" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="{{ description }}" />
         <meta property="og:url" content="{{ config.base_url }}" />
-        <meta name="og:image" content="{{get_url(path='favicon.png')}}" />
-        <meta name="twitter:creator" content="{{config.extra.twitter}}" />
+        <meta name="og:image" content="{{ get_url(path='favicon.png') }}" />
+        <meta name="twitter:creator" content="{{ config.extra.twitter }}" />
         <meta name="twitter:title" content="{{ title }}" />
-        <meta name="twitter:image" content="{{get_url(path='favicon.png')}}" />
+        <meta name="twitter:image" content="{{ get_url(path='favicon.png') }}" />
 
         <!--<link rel="preload" href="/Inter.var.woff2" as="font" type="font/woff2" crossorigin="anonymous">-->
 
         <link rel="dns-prefetch" href="//cdn.taigachat.se"></link>
-        <link rel="prefetch" href="{{get_url(path='downloads', trailing_slash=true)}}"></link>
+        <link rel="prefetch" href="{{ get_url(path='downloads', trailing_slash=true) }}"></link>
 
         <style type="text/css">
             @font-face {
                 font-family: 'Inter';
-                src: url("{{get_url(path='Inter.var.woff2')}}") format("woff2");
+                src: url("{{ get_url(path='Inter.var.woff2') }}") format("woff2");
                 /*font-display: swap*/
                 font-display: optional
             }
@@ -58,7 +59,7 @@
             <header id="the-header">
                 <div id="the-navbar">
                     <a class="navbar-left" href="/">
-                        <img id="navbar-logo" alt="website home button" src="{{get_url(path='taiga.svg')}}"></img>
+                        <img id="navbar-logo" alt="website home button" src="{{ get_url(path='taiga.svg') }}"></img>
                         <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
                     </a>
                     <nav id="navbar-items">
@@ -73,7 +74,7 @@
                 </div>
                 <div id="the-mobile-navbar">
                     <a class="navbar-left" href="/">
-                        <img id="navbar-logo" alt="website home button" src="{{get_url(path='taiga.svg')}}"></img>
+                        <img id="navbar-logo" alt="website home button" src="{{ get_url(path='taiga.svg') }}"></img>
                         <h1 id="navbar-title">Taiga<span class="taiga-chat-title-2">Chat</span></h1>
                     </a>
                     <a id="navbar-more" onclick="document.getElementById('navbar-mobile-items').classList.toggle('shown')">
@@ -95,27 +96,27 @@
                     <nav class="main-footer-links-column">
                         <b>Community</b>
                         <a class="main-footer-link" href="https://www.youtube.com/@TaigaChat">Demo Videos</a>
-                        <a class="main-footer-link" href="{{get_url(path='servers', trailing_slash=true)}}">Public Servers</a>
-                        <a class="main-footer-link" href="{{get_url(path='chat', trailing_slash=true)}}">Developer Chat</a>
+                        <a class="main-footer-link" href="{{ get_url(path='servers', trailing_slash=true) }}">Public Servers</a>
+                        <a class="main-footer-link" href="{{ get_url(path='chat', trailing_slash=true) }}">Developer Chat</a>
                     </nav>
                     <nav class="main-footer-links-column">
                         <b>About Us</b>
-                        <a class="main-footer-link" href="{{get_url(path='blog', trailing_slash=true)}}">Blog</a>
-                        <a class="main-footer-link" href="{{get_url(path='contact', trailing_slash=true)}}">Contact</a>
-                        <a class="main-footer-link" href="{{get_url(path='mission#we-provide')}}">Features</a>
+                        <a class="main-footer-link" href="{{ get_url(path='blog', trailing_slash=true) }}">Blog</a>
+                        <a class="main-footer-link" href="{{ get_url(path='contact', trailing_slash=true) }}">Contact</a>
+                        <a class="main-footer-link" href="{{ get_url(path='mission#we-provide') }}">Features</a>
                     </nav>
                     <nav class="main-footer-links-column">
                         <b>Resources</b>
-                        <a class="main-footer-link" href="{{config.extra.gh}}">Open Source</a>
-                        <a class="main-footer-link" href="{{get_url(path='privacy-policy', trailing_slash=true)}}">Privacy Policy</a>
-                        <a class="main-footer-link" href="{{get_url(path='terms-of-service', trailing_slash=true)}}">Terms of Service</a>
+                        <a class="main-footer-link" href="{{ config.extra.gh }}">Open Source</a>
+                        <a class="main-footer-link" href="{{ get_url(path='privacy-policy', trailing_slash=true) }}">Privacy Policy</a>
+                        <a class="main-footer-link" href="{{ get_url(path='terms-of-service', trailing_slash=true) }}">Terms of Service</a>
                     </nav>
                 </div>
                 <div id="main-footer-rights-socials">
                     <div id="main-footer-copyright">© 2024 TaigaChat Studios</div>
                     <div>
-                        <a href="{{config.extra.twitter_url}}"><img class="main-footer-right-socials-link" alt="X logo" src="{{get_url(path='logo-x.svg')}}" loading="lazy"></img></a>
-                        <a href="{{config.extra.insta_url}}"><img class="main-footer-right-socials-link" alt="Instagram logo" src="{{get_url(path='logo-instagram.svg')}}" loading="lazy"></img></a>
+                        <a href="{{ config.extra.twitter_url }}"><img class="main-footer-right-socials-link" alt="X logo" src="{{ get_url(path='logo-x.svg') }}" loading="lazy"></img></a>
+                        <a href="{{ config.extra.insta_url }}"><img class="main-footer-right-socials-link" alt="Instagram logo" src="{{ get_url(path='logo-instagram.svg') }}" loading="lazy"></img></a>
                     </div>
                 </div>
             </div>
