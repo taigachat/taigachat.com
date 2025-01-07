@@ -20,7 +20,7 @@ In TaigaChat, tyranny is impossible. We as the creators are:
 
 If you are familiar with the freedoms of E-Mail, this will all seem very familiar!
 
-_(Please note that for 3 & 4 to be guaranteed, your community must self-host)_
+_(Please note that for 3 & 4 your community must self-host to be on the safe-side)_
 
 # We Provide
 
