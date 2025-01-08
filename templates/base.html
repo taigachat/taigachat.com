@@ -130,7 +130,7 @@
                     </nav>
                 </div>
                 <div id="main-footer-rights-socials">
-                    <div id="main-footer-copyright">© 2024 TaigaChat Studios</div>
+                    <div id="main-footer-copyright">© {{ now() | date(format="%Y") }} TaigaChat Studios</div>
                     <div>
                         <a href="{{ config.extra.twitter_url }}"><img class="main-footer-right-socials-link" alt="X logo" src="{{ get_url(path='logo-x.svg') }}" loading="lazy"></img></a>
                         <a href="{{ config.extra.insta_url }}"><img class="main-footer-right-socials-link" alt="Instagram logo" src="{{ get_url(path='logo-instagram.svg') }}" loading="lazy"></img></a>
