@@ -16,12 +16,15 @@
         <meta name="description" content="{{ description }}">
 
         {# Since we can't know in advance for 404.html we do a if guard #}
-        {% if current_url %}
+        {%- if current_url -%}
         <link rel="canonical" href="{{ current_url }}"/>
         {% endif %}
 
-        {% if config.mode != "serve" %}
-        <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'; style-src 'unsafe-inline' 'self'; img-src 'self'; object-src 'none'; default-src 'self'">
+        {%- set good_csp = "style-src 'unsafe-inline' 'self'; img-src 'self'; object-src 'none'; default-src 'self'" -%}
+        {% if config.mode == "serve" %}
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'; connect-src *; {{ good_csp }}">
+        {% else %}
+        <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'; {{ good_csp }}">
         {% endif %}
 
         {# Twitter and Facebook #}
