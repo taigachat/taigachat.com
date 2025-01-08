@@ -5,9 +5,9 @@
         {%- set title = page.title | default(value=section.title | default(value = config.title)) -%}
         {%- set description = page.description | default(value=section.description | default(value = config.description)) -%}
 
-        {% block title %}
+        {%- block title -%}
         <title>{{ title }}</title>
-        {% endblock %}
+        {%- endblock -%}
 
         <link rel="icon" type="image/png" href="{{ get_url(path='favicon.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,14 +21,14 @@
         {% endif %}
 
         {%- set good_csp = "style-src 'unsafe-inline' 'self'; img-src 'self'; object-src 'none'; default-src 'self'" -%}
-        {% if config.mode == "serve" %}
+        {%- if config.mode == "serve" -%}
         <meta http-equiv="Content-Security-Policy" content="script-src 'self'; connect-src *; {{ good_csp }}">
-        {% else %}
+        {%- else -%}
         <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'; {{ good_csp }}">
-        {% endif %}
+        {%- endif -%}
 
         {# Twitter and Facebook #}
-        {% if current_url %}
+        {%- if current_url -%}
         <meta name="og:title" content="{{ title }}" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="{{ description }}" />
@@ -37,15 +37,15 @@
         <meta name="twitter:creator" content="{{ config.extra.twitter }}" />
         <meta name="twitter:title" content="{{ title }}" />
         <meta name="twitter:image" content="{{ get_url(path='favicon.png') }}" />
-        {% endif %}
+        {%- endif -%}
 
         <link rel="dns-prefetch" href="//cdn.taigachat.se"></link>
         <link rel="prefetch" href="{{ get_url(path='downloads', trailing_slash=true) }}"></link>
 
         {# On all pages except the main page we add a prefetch for the main page. #}
-        {%if not current_path or current_path != "/" %}
+        {%- if not current_path or current_path != "/" -%}
         <link rel="prefetch" href="{{ get_url(path='', trailing_slash=true) }}"></link>
-        {% endif %}
+        {%- endif -%}
 
         <style type="text/css">
             @font-face {
@@ -55,19 +55,19 @@
                 font-display: optional
             }
             {{ load_data(path="static/normalize.min.css", format="plain") | safe }}
-            {% if config.mode != "serve" %}
+            {%- if config.mode != "serve" -%}
                 {% set main_css = load_data(path="/static/main.css", format="plain") %}
                 {{ main_css | safe }}
-            {% endif %}
+            {%- endif -%}
         </style>
 
         {% block head %} {% endblock %}
     </head>
     <body>
         {# We embed the file if not running in serve mode. #}
-        {% if config.mode == "serve" %}
+        {%- if config.mode == "serve" -%}
             <link rel="stylesheet" href="/main.css" type="text/css"></link>
-        {% endif %}
+        {%- endif -%}
 
         <div id="main-gradient-1"></div>
         <div id="main-gradient-2"></div>
