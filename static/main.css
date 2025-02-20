@@ -65,13 +65,13 @@ body {
     text-decoration: none;
 }
 
-.navbar__logo {
+.the-navbar__logo {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
 
-#navbar-title {
+.the-navbar__title {
     font-size: 18px;
 }
 
