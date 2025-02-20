@@ -40,6 +40,7 @@
         {%- endif -%}
 
         <link rel="dns-prefetch" href="//cdn.taigachat.se"></link>
+        <link rel="dns-prefetch" href="//app.taigachat.se"></link>
         <link rel="prefetch" href="{{ get_url(path='downloads', trailing_slash=true) }}"></link>
 
         {# On all pages except the main page we add a prefetch for the main page. #}
@@ -82,7 +83,7 @@
                     <nav id="navbar-items">
                         {% include "navbar.html" %}
                     </nav>
-                    <a class="flashy-button-small" href="https://cdn.taigachat.se/versions/dist">
+                    <a class="flashy-button-small" href="https://app.taigachat.se">
                         <div class="flashy-button">
                             <div class="flashy-button-bg"></div>
                             <div class="flashy-button-content">Open Web App</div>
