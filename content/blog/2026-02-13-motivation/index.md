@@ -1,0 +1,140 @@
++++
+title = "Why TaigaChat is Built Different"
++++
+
+With recent news stemming from a large IPO about to go through, I've been [seeing](https://sporks.space/2026/02/10/a-few-design-decisions-for-a-new-chat-platform/) a lot
+of [discussion](https://blog.fluxer.app/how-i-built-fluxer-a-discord-like-chat-app/) on how a public chat application should work.
+I am very glad to see other people reaching the same conclusions regarding the design as I have.
+And I'd like to share with you today the motivations behind these ideas.
+
+# The Big Three: Decentralization, Federation, Walled-Gardens
+
+It is no secret that there already are open-source alternatives. Matrix is one that comes to mind. But there are many others.
+Most "alternatives" are really just closed-source aspirants that simply "pinky-promise" not to sell-out.
+As such the efforts of Matrix are commendable. And I sincerely believe that they are well-intentioned people.
+However, I do not actually believe that Matrix will solve the issues of its predecessors, namely centralization.
+There are plenty of studies measuring the centralization-ness score of the fediverse and other federated networks. Note that I am by no means a scholar, but the data seems
+to suggest that federated networks have a nasty habit of either fully centralizing towards one home-server.
+That or splitting off into many North Korea-esque hermit kingdoms where almost all communication to the outside world is cut off.
+Where reaching the entire world is the goal, it makes sense however to use federation.
+I do think the fediverse made the correct choice in their instance.
+But the same choice does not make sense for publicly joinable but otherwise isolated communities.
+
+![North korea square](./north_korea.jpg)
+
+# The Gate Keepers
+
+Outside of technical complexity, there is a large downside to traditional federation. As mentioned before, federation tends to centralize.
+They do so for two usual reasons, and both must be solved.
+
+First, since all communication with communities you are part of go through the home-server, an unwanted gatekeeper emerges. If the operator of your home-server dislikes one of your interests (be it political; moral or personal)
+they can simply cut off the connection. Most federated clients are not made to work around this issue. But maybe the user could just migrate to another home-server...
+
+Second, accounts are usually bound to a certain home-server and can not be migrated to other servers.
+This places users in an unwitting hostage situation. As time goes by, the user ends up having more and more things tied up to their account.
+Message history. Third-party logins. Contacts. Memes. Niche servers. You name it. The pain of losing the account increasing day by day.
+One day the user finds themselves self-censoring. The risk of losing their account outweighs the value of sharing their true thoughts.
+This is a tragedy.
+
+![Illustration of the problems with federation](./federation.drawio.svg)
+
+# World's Hardest Database
+
+The problems with P2P decentralization are technical, but even more so social. It's a giant headache of trying to balance and align incentives for the benefit of everyone.
+Why should someone diligently store the messages of another person? What if that person is someone they find repugnant? How do we stop someone from spawning thousands of new nodes and taking over the network.
+We suddenly find ourselves in a boat sitting together with the people designing consensus algorithms for Blockchains.
+On the technical side we have the fact that it is not the most elegant solution. Suppose we want to store the list of servers a user has joined somewhere.
+Does it make sense to store this information on just a single disk? Any database engineer will tell you this sounds like a disaster waiting to happen.
+What about the same information spread over 5 geo-separated regions? _Well, that sounds good_. What ends up happening in most decentralized solutions is that every participating node has a copy
+of all the data. Yes, you can shard the data. But at this point you are [trying](https://filecoin.io/) to build a decentralized database where participants are guaranteed that data is stored by at least 5 different nodes.
+While at the same time doing your best to protect this from hostile actors. Oh, and preferably ordinary users should not have to pay monetarily. This is __hard__.
+If you could create such a database then I would be very impressed.
+But would you trust it? How does GDPR fit in with this? How many lines of code are we talking here? And all that extra complexity to achieve something a centralized solution can do faster.
+The takeaway here is that if there is an easier way then surely we should take it.
+
+![The Head Ache](./the_head_ache.jpg)
+
+# The Walled-Garden Cycle
+
+This might seem like an obvious one. But for some reason every few months or so hype is created around a "totally different and free speech (tm) loving alternative to XYZ".
+And every time I look into them it is the same story. A fully centralized solution no different from the one they are trying to replace. The only difference is the size. The end is always the same.
+The alternative has not yet reached the point where banks, governments, Cloudflare and other usual suspects have taken notice to it.
+The second they reach this mass they either get shut down or buckle under the weight and become just as bad or even worse than the thing they wanted to replace. And usually with a user base even less enjoyable.
+This cycle is something that I'd be very happy to elaborate on. But I will cut it short here as to not depress anyone accidentally. Luckily there are good news!
+
+![An image of The Lover and Dame Oyseuse outside a walled garden - Roman de la Rose (c.1490-1500)](./walled-garden.jpg)
+
+# Minecraft got it Right
+
+I was always struck by how simple it was to create a Minecraft server. We were doing it as kids. In every class there would be at least one person who would set one up. Sometimes even more.
+But Minecraft of the early-days also felt very free. In a way, Minecraft was the [BBS](https://www.divergent-desktop.org/blog/2026/01/26/a12web/#recalling-the-old-ways) of my generation.
+Every server would be a new experience. With genuine interactions between players leading to invites to other servers. For better or worse, there was little parent oversight.
+I know many who have been booted from different social media websites, but never a person who has had their Minecraft account taken down.
+
+Sadly the weakest link ended up being the authentication system. The Mojang of today goes around [forcing public servers](https://grandtheftmc.net/threads/mojang-strikes-again.17292/) to align with the new brand by threatening to revoke authentication for that server.
+If only the authentication system was a little bit different. Perhaps power users could be entrusted to manage their own private keys for authentication. While ordinary users can pick a home-server that stores them for them.
+Of importance is of course that the users can at any time pick up their stuff and leave the home-server. And that the keys always remain encrypted.
+
+![An image of a Minecraft world](./minecraft.png)
+
+# TaigaChat's Hybrid Approach
+
+Back in 2021, inspired by Minecraft, and disgruntled by the alternatives available at the time, I began working on what would eventually become TaigaChat.
+The design goal was simple: a server lightweight enough to run on a Raspberry Pi and easy enough to set up that a kid could quickly do it [^1].
+Secondary goals were: a simple protocol and an easily hackable/moddable server [^2].
+
+The approach TaigaChat takes is to let every server be hosted by its owner (or by a hosting service).
+Every server is able to service any user so long as they know the IP address.
+The clients go out of their way to contact the servers directly to prevent any gatekeeping. If there is a need of keeping the client IP address secret then they may enable an optional proxy of their choice. Or simply just use a VPN.
+Clients authenticate using public-private-key cryptography. But they may also use other means such as password, TOTP, etc.
+Then there are things that belong to a user's home-server (borrowing federation terminology). For these things the home-server must be contacted.
+These are the ones I've identified so far are:
+- Notifications (due to API restrictions)
+- User keys in encrypted form (must be optional)
+- Server lists (must also be encrypted)
+- One click community setups
+- Direct-Messaging (and smaller group chats)
+
+![Illustration of the hybrid approach used in TaigaChat](./hybrid.drawio.svg)
+
+# On E2EE
+
+TaigaChat has E2EE. But it is a very simple implementation. And it requires some other secure channel to pass a secret along first. In short, a message can be encrypted using a "secret".
+The secret is simply a common password that is passed through a KDF to create data for AES256. That's it. It will work well for most of your communication (friends & family). But having to do so isn't very convenient when talking
+to large masses. My personal opinion is that when trying to securely communicate to large groups of people you will end up with way bigger fish to fry.
+You'll be spending a lot of time trying to sniff out infiltrators and snitches. And frankly I think Diffie-Hellman schemes will just give you a false sense of security that ends up betraying you.
+You might be secure mathematically, but not socially.
+Solving this issue is best left to people with actual experience in the matter. TaigaChat was designed for family and **public** communities, not underground revolutionaries. I.e, I just want to send silly memes to my friends.
+
+![An image of an impostor](./impostor.jpg)
+
+# The Future of TaigaChat
+
+![A man having two choices and picking the wrong one](./twoways.jpg)
+
+I have done very little to market TaigaChat to the outside world. My main reason for this was a feeling that I was still making grand changes to the protocol.
+I felt like inviting people to join my adventure would just lead them to become annoyed with me. And I would really hate to waste other people's time.
+If you check the GitHub you may notice that it has not been updated in a year. All of my recent changes are still on my private git server. And I plan on releasing the latest changes to codeberg.org instead.
+There are a number of things that are still broken from my latest refactor that I am working to restore. And I hope to publish a roadmap in my next post. As well as detailing current limitations.
+
+If this post resonated with you, **I do not ask** that you try TaigaChat since it is not fully ready yet. Although it has come very far (there is even voice chat if you can believe it) I do not want to make a bad first impression. However, I do really **want to get in touch** so that we may discuss further.
+It would be really motivating to see what kind of interest there is out there. And very helpful to see what the different needs people have are.
+Also working on this project alone now for almost 5 years is starting to get a bit lonely.
+
+So in the grandest irony of my life, please join my new Discord server. [https://discord.gg/hePZZqk7](https://discord.gg/hePZZqk7)
+
+-- Alexander
+
+[^1]: Which is why the server has to work on Windows
+[^2]: Which is why the reference server implementation uses JavaScript
+
+Attribution
+- "The Lover and Dame Oyseuse outside a walled garden - Roman de la Rose (c.1490-1500), f.12v - BL Harley MS 4425 (cropped)" by Master of the Prayer Books of around 1500 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/
+- "North Korea - Kim Il-Sung statue" by Roman Harak is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/
+- "The Head Ache" - George Cruikshank - https://www.metmuseum.org/art/collection/search/393320
+
+<!--
+https://prose.org/
+https://commet.chat/
+https://github.com/fluxerapp/fluxer?ref=blog.fluxer.app
+-->

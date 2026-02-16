@@ -43,19 +43,19 @@
 <div id="the-downloads__container">
     <h1 id="the-downloads__text">Downloads</h1>
     <div id="the-downloads__logos">
-        <a class="the-downloads__card" href="https://cdn.taigachat.se/versions/TaigaChat.AppImage">
+        <a class="the-downloads__card" href="{{ config.extra.linux_download_url }}">
                 <img class="the-downloads__card__logo" src="{{ get_url(path='logo-linux.svg') }}"></img>
             <div class="the-downloads__card__title">
                 Linux
             </div>
         </a>
-        <a class="the-downloads__card" href="https://cdn.taigachat.se/versions/TaigaChat.msi">
+        <a class="the-downloads__card" href="{{ config.extra.win32_download_url }}">
             <img class="the-downloads__card__logo" src="{{ get_url(path='logo-windows.svg') }}"></img>
             <div class="the-downloads__card__title">
                 Windows
             </div>
         </a>
-        <a class="the-downloads__card" id="the-downloads__logos__web" href="https://app.taigachat.se">
+        <a class="the-downloads__card" id="the-downloads__logos__web" href="{{ config.extra.web_app_url }}">
             <span class="the-downloads__card__logo">🌐</span>
             <div class="the-downloads__card__title">
                 Web

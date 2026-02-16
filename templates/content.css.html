@@ -14,8 +14,10 @@
     }
 
     .main-content img {
-        max-width: 300px;
-        border-radius: 20px;
+        max-width: 450px;
+        border-radius: 10px;
+        margin: auto;
+        display: block;
     }
 
     .main-content h1,
@@ -187,4 +189,18 @@
             width: 200px;
         }
     {% endif %}
+
+    .footnote-definition p {
+        display: unset;
+    }
+
+    .footnote-definition .footnote-definition-label {
+        margin-right: 2px;
+    }
+
+    @media screen and (min-width: 64em) {
+        .main-content {
+            max-width: 64rem;
+        }
+    }
 </style>

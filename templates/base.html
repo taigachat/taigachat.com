@@ -83,7 +83,7 @@
                     <nav id="navbar-items">
                         {% include "navbar.html" %}
                     </nav>
-                    <a class="flashy-button-small" href="https://app.taigachat.se">
+                    <a class="flashy-button-small" href="{{ config.extra.web_app_url }}">
                         <div class="flashy-button">
                             <div class="flashy-button-bg"></div>
                             <div class="flashy-button-content">Open Web App</div>
@@ -131,7 +131,7 @@
                     </nav>
                 </div>
                 <div id="main-footer-rights-socials">
-                    <div id="main-footer-copyright">© {{ now() | date(format="%Y") }} TaigaChat Studios</div>
+                    <div id="main-footer-copyright">© {{ now() | date(format="%Y") }} TaigaChat Developers</div>
                     <div>
                         <a href="{{ config.extra.twitter_url }}"><img class="main-footer-right-socials-link" alt="X logo" src="{{ get_url(path='logo-x.svg') }}" loading="lazy"></img></a>
                         <a href="{{ config.extra.insta_url }}"><img class="main-footer-right-socials-link" alt="Instagram logo" src="{{ get_url(path='logo-instagram.svg') }}" loading="lazy"></img></a>
