@@ -368,6 +368,8 @@ h2.page-description {
 
 .main-content {
     word-wrap: break-word
+    display: flex;
+    flex-flow: column;
 }
 
 .main-content :first-child {
