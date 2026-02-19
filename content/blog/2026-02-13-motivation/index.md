@@ -2,6 +2,8 @@
 title = "Why TaigaChat is Built Different"
 +++
 
+_TL;DR Imagine TaigaChat as Minecraft but as a community-chat with self-hostable login servers._
+
 With recent news stemming from a large IPO about to go through, I've been [seeing](https://sporks.space/2026/02/10/a-few-design-decisions-for-a-new-chat-platform/) a lot
 of [discussion](https://blog.fluxer.app/how-i-built-fluxer-a-discord-like-chat-app/) on how a public chat application should work.
 I am very glad to see other people reaching the same conclusions regarding the design as I have.
@@ -9,14 +11,14 @@ And I'd like to share with you today the motivations behind these ideas.
 
 # The Big Three: Decentralization, Federation, Walled-Gardens
 
-It is no secret that there already are open-source alternatives. Matrix is one that comes to mind. But there are many others.
+Let's begin by addressing the biggest alternative out there right now, [Matrix](https://matrix.org/). But there are many others.
 Most "alternatives" are really just closed-source aspirants that simply "pinky-promise" not to sell-out.
 As such the efforts of Matrix are commendable. And I sincerely believe that they are well-intentioned people.
 However, I do not actually believe that Matrix will solve the issues of its predecessors, namely centralization.
-There are plenty of studies measuring the centralization-ness score of the fediverse and other federated networks. Note that I am by no means a scholar, but the data seems
+There are plenty of studies measuring the centralization-ness score of the [fediverse](https://en.wikipedia.org/wiki/Fediverse) and other federated networks. Note that I am by no means a scholar, but the data seems
 to suggest that federated networks have a nasty habit of either fully centralizing towards one home-server.
 That or splitting off into many North Korea-esque hermit kingdoms where almost all communication to the outside world is cut off.
-Where reaching the entire world is the goal, it makes sense however to use federation.
+Where reaching the entire world is the goal, it makes sense however to use [federation](https://bsky.social/about/blog/5-5-2023-federation-architecture).
 I do think the fediverse made the correct choice in their instance.
 But the same choice does not make sense for publicly joinable but otherwise isolated communities.
 
