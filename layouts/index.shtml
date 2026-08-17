@@ -1,0 +1,24 @@
+<extend template="base.shtml">
+<head id="head">
+</head>
+<div id="the-page">
+	<section id="the-intro-header" class="tcw-split-pane">
+		<ctx :html="$page.contentSection('index__header')"></ctx>
+		<div id="the-intro-header__links">
+			<a class="tcw-flashy" href="https://app.taigachat.se">Open Web App</a>
+		</div>
+	</section>
+	<section id="the-screenies-section" class="tcw-split-pane tcw-split-pane-50">
+		<ctx :html="$page.contentSection('index__selling-points')"></ctx>
+		<ctx :html="$page.contentSection('index__screenies')"></ctx>
+	</section>
+	<section>
+		<ctx :html="$page.contentSection('index__community')"></ctx>
+	</section>
+	<section id="the-governance-section">
+		<ctx :html="$page.contentSection('index__governance')"></ctx>
+	</section>
+	<section>
+		<ctx :html="$page.contentSection('index__funding')"></ctx>
+	</section>
+</div>

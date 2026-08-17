@@ -1,0 +1,47 @@
+<extend template="base.shtml">
+<head id="head">
+	<link type="text/css" rel="stylesheet" href="$site.asset('highlight.css').link()">
+	<!-- mathtex -->
+	<link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">
+	<script defer src="$site.asset('temml.min.js').link()"></script>
+	<script defer src="$site.asset('render-mathtex.js').link()"></script>
+	<!-- /mathtex -->
+
+	<style>
+		#prev-next {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: 40px;
+		}
+		
+		figure {
+			align-self: center;
+			text-align: center;
+			font-style: italic;
+		}
+		
+		.post {
+			display:flex;
+			flex-direction: column;
+		}
+	</style>
+</head>
+<div id="the-page">
+	<h1 :text="$page.title"></h1>
+	<div class="post" :html="$page.content()"></div>
+	<div id="prev-next">
+		<div :if="$page.prevPage?()">
+			<a href="$if.link()">
+				←
+				<span :text="$if.title"></span>
+			</a>
+		</div>
+		<div :if="$page.nextPage?()">
+			<a href="$if.link()">
+				<span :text="$if.title"></span>
+				→
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+.zine_version = "0.13.0",
+.site = .simple(.{
+    .title = "TaigaChat",
+    .host_url = "https://example.com",
+    .content_dir_path = "content",
+    .layouts_dir_path = "layouts",
+    .assets_dir_path = "assets",
+    .static_assets = [
+        "Temml.woff2",
+        "OpenSans_var.ttf",
+        "Nunito_var.ttf",
+        "taiga.svg",
+    ],
+}),
+

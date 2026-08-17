@@ -1,6 +1,8 @@
-+++
-title = "Why TaigaChat is Built Different"
-+++
+---
+.title = "How TaigaChat is Built Different",
+.date = .date("2026-10-08T00:00:00"),
+.layout = "post.shtml",
+---
 
 _TL;DR Imagine TaigaChat as Minecraft but as a community-chat with self-hostable login servers._
 
@@ -135,8 +137,10 @@ Attribution
 - "North Korea - Kim Il-Sung statue" by Roman Harak is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/
 - "The Head Ache" - George Cruikshank - https://www.metmuseum.org/art/collection/search/393320
 
+```=html
 <!--
 https://prose.org/
 https://commet.chat/
 https://github.com/fluxerapp/fluxer?ref=blog.fluxer.app
 -->
+```

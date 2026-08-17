@@ -1,0 +1,85 @@
+---
+.title = "Homepage",
+.date = .date("2026-08-17T21:00:00"),
+.layout = "index.shtml",
+---
+
+[]($section.id("index__header"))
+TaigaChat is an open-source instant messenger for **communities**
+aiming to provide **autonomy** and **fun**.
+
+[]($section.id("index__selling-points"))
+- FOSS
+- Handwritten (no slop)
+- Decentralized not Federated
+- Voice channels
+- Very lean code
+- Very few dependencies
+- RYOK support
+- 5 years in the making
+- by a 1-person team
+
+[]($section.id("index__screenies"))
+![](./screenie.png "TaigaChat in action")
+
+[]($section.id("index__community"))
+# Come Join Us
+The easiest way to get in touch with other users of TaigaChat
+is to simply create and account and become active in the TaigaChat HQ
+server. Whenever you register under normal circumstances you will
+automatically join the HQ. This will be changed in the future!
+The URL of this server is: https://home.taigachat.se
+
+Also in the list of plans is creating an IRC plugin for TaigaChat.
+Details on how to connect to it will be announced when it is ready.
+But the initial implementation will be very bare-bones.
+Don't expect IRCv3 features initially.
+
+If you don't feel quite ready yet, users can also be found on the [deprecated
+Discord server](https://discord.gg/hePZZqk7).
+Whatever method you decide to get in touch by,
+I hope you will receive a warm welcome!
+
+[]($section.id("index__governance"))
+# Governance
+TaigaChat is currently a small one-man project.
+So there isn't much to say about governance.
+I hold the BDFL style of leadership found in other FOSS
+projects in high-regard. This is something that I would emulate with
+TaigaChat should the project expand.
+I really don't want to create another design-by-committee protocol.
+My vision for what I want TaigaChat to be is quite clear, but I'm also very
+open to adapting it for the needs of others as long as the project scope doesn't
+get too out of hand.
+That said now is a great time to come and leave a mark as I'm quite
+open to working together with others.
+Anything fun will probably go over well!
+![](./hammurabi.jpg)
+
+[]($section.id("index__funding"))
+# Sustainability
+I develop TaigaChat on my free time as a passion project.
+Because of it just being me and my text-editor, my only expense is time.
+And I am willing to spend that time because I find the project fun to work on.
+This is why I'm not in need of funding currently.
+
+Looking into the future, I expect the small codebase and decentralization to
+make the upkeep cost of TaigaChat very small.
+When the day comes that the free hosting (for those that do not self-host)
+actually starts cutting into my living-expenses,
+I might try to find willing volunteers
+that can offload the server costs for me.
+Another solution would be to reach out to the larger TaigaChat servers
+that use our hosting and see if they are able to chip-in.
+In either case, the operating overhead will be tiny.
+
+More importantly, if you like TaigaChat,
+what I'd appreciate more than any material patrons
+is simply your word of mouth.
+I believe introducing TaigaChat to friends
+is a healthier way for us to spread than some massive advertising campaign.
+If you're self-hosting your own community then
+I'd love to hear about it. Few things warm my soul more than seeing people have
+genuine uses for my projects.
+
+
