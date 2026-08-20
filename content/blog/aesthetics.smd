@@ -1,0 +1,32 @@
+---
+.title = "On Aesthetics",
+.date = .date("2026-08-20T01:35:00"),
+.layout = "post.shtml",
+---
+
+This is a short little post to explain my reasoning with the recent UI skin overhaul I embarked on.
+It's quite simple. Before I had a website that looked a tad bit "too corporate". It felt eerie.
+Because it was the effort of one man, and as such did not have much content on it. But it also tried to
+look and speak as if it was a major startup with backing.
+It really had a strange Backrooms feeling to it.
+Then of course, the elephant in the room, TaigaChat itself. Before it had a _nice_ 2020-esque "elite gamer" feeling to it.
+Very divisive. No longer in vogue. And nauseating for me. It had to go. So this is what I did.
+
+For the website I wanted to emphasize that this is not some corporate-shilled modern hypeware.
+I wanted to emphasize the human aspect of it.
+And so I looked at three of my favorite projects that I believe have that human divine spark to them.
+Those were Zig, FreeBSD and Arcan. I looked at their websites. Ultimately I think you can tell which one I was
+the most inspired by.
+
+As for TaigaChat I realized I had to support two vastly different themes. This was such that I could easily
+tell what CSS belonged to the "theme" and what parts were essential and should be shared accross all other themes that
+I wish to support in the future. So I made two themes. One I call pretty. And one that I call elite. The purpose of the elite
+one is actually to just be a minimal low-effort theme that reminds of a Hollywood hacker's terminal setup.
+A little trolltheme if you will.
+The other I put in
+a tiny bit more effort into. The pretty theme was supposed to be inoffensive, and also not subject to fashion trends (like the TaigaChat gamer era was).
+For it I took some inspiration from a certain big tech company and their HIG guide. Not the new HIG, which was most likely designed
+to be very hard to replicate in CSS. But the old one, when it still looked plain and boring.
+This theme will have to do until I can get some more stylistically gifted people on board with TaigaChat.
+
+-\- Alexander

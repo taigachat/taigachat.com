@@ -18,7 +18,7 @@
 	<section id="the-governance-section">
 		<ctx :html="$page.contentSection('index__governance')"></ctx>
 	</section>
-	<section>
+	<section id="the-sustainability-section">
 		<ctx :html="$page.contentSection('index__funding')"></ctx>
 	</section>
 </div>

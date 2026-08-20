@@ -1,6 +1,6 @@
 ---
-.title = "How TaigaChat is Built Different",
-.date = .date("2026-10-08T00:00:00"),
+.title = "Why TaigaChat is Built Different",
+.date = .date("2026-08-10T00:00:00"),
 .layout = "post.shtml",
 ---
 
@@ -24,7 +24,7 @@ Where reaching the entire world is the goal, it makes sense however to use [fede
 I do think the fediverse made the correct choice in their instance.
 But the same choice does not make sense for publicly joinable but otherwise isolated communities.
 
-![North korea square](./north_korea.jpg)
+![North Korean square](./north_korea.jpg)
 
 # The Gate Keepers
 
@@ -121,13 +121,17 @@ I felt like inviting people to join my adventure would just lead them to become 
 If you check the GitHub you may notice that it has not been updated in a year. All of my recent changes are still on my private git server. And I plan on releasing the latest changes to codeberg.org instead.
 There are a number of things that are still broken from my latest refactor that I am working to restore. And I hope to publish a roadmap in my next post. As well as detailing current limitations.
 
-If this post resonated with you, **I do not ask** that you try TaigaChat since it is not fully ready yet. Although it has come very far (there is even voice chat if you can believe it) I do not want to make a bad first impression. However, I do really **want to get in touch** so that we may discuss further.
-It would be really motivating to see what kind of interest there is out there. And very helpful to see what the different needs people have are.
+If this post resonated with you,
+**I do not ask** that you try TaigaChat with all of your friends since it is not fully ready yet.
+Although it has come very far (there is even voice chat if you can believe it)
+I do not want to make a bad first impression. However, I do really **want to get in touch** so that we may discuss further.
+It would be really motivating to see what kind of interest there is out there.
+And very helpful to see what the different needs people have are.
 Also working on this project alone now for almost 5 years is starting to get a bit lonely.
+So if you wish, please join me in TaigaChat for a quick chat by simply registering a quick throw away account.
+You will autoamtically be added to a server where you can have your thoughts heard.
 
-So in the grandest irony of my life, please join my new Discord server. [https://discord.gg/hePZZqk7](https://discord.gg/hePZZqk7)
-
--- Alexander
+-\- Alexander
 
 [^1]: Which is why the server has to work on Windows
 [^2]: Which is why the reference server implementation uses JavaScript

@@ -283,7 +283,7 @@ body {
   border-radius: 3mm;
 }
 
-#the-governance-section img {
+#the-governance-section img, #the-sustainability-section img {
   border: #ddd solid 0.1mm;
   border-radius: 10000mm;
   width: 75mm;
@@ -292,7 +292,7 @@ body {
   filter: brightness(110%) grayscale(100%);
 }
 
-#the-governance-section p {
+#the-governance-section p, #the-sustainability-section p {
   display: flex;
   flex-flow: column;
   gap: 6mm;

@@ -1,0 +1,10 @@
+---
+.title = "Screenshots",
+.date = .date("2026-08-20T21:00:00"),
+.layout = "page.shtml",
+---
+
+I will gradually be uploading more screenshots of the UI here as I redesign stuff.
+I'd also like to have a historical section here.
+
+![](./screenie.png)

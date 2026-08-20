@@ -8,29 +8,38 @@
 	<!-- /mathtex -->
 
 	<style>
-		#prev-next {
+		
+		#the-post {
+			display:flex;
+			flex-direction: column;
+		}
+		
+		#the-post figure {
+			display: flex;
+			flex-flow: column;
+			align-self: center;
+			align-items: center;
+			text-align: center;
+			font-style: italic;
+			max-width: 180mm;
+		}
+
+		#the-post img {
+			width: 100%;
+		}
+
+		#the-post__links {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			margin-top: 40px;
 		}
-		
-		figure {
-			align-self: center;
-			text-align: center;
-			font-style: italic;
-		}
-		
-		.post {
-			display:flex;
-			flex-direction: column;
-		}
 	</style>
 </head>
 <div id="the-page">
 	<h1 :text="$page.title"></h1>
-	<div class="post" :html="$page.content()"></div>
-	<div id="prev-next">
+	<div id="the-post" :html="$page.content()"></div>
+	<div id="the-post__links">
 		<div :if="$page.prevPage?()">
 			<a href="$if.link()">
 				←
