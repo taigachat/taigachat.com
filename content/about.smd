@@ -4,6 +4,8 @@
 .layout = "about.shtml",
 ---
 
+# Rational
+
 Chat logs are memories. Important memories.
 Maybe almost as important as images? Many of us might have important
 photo memories that now only exist in a chat log somewhere.
@@ -23,5 +25,31 @@ And self-hosting is the only reliable way to remain in control.
 When it comes to my generation, almost everyone has a close friend
 that has self hosted something.
 That something is in 90% of cases a good old Minecraft server.
+Therefor I had to consider why this was the case. As is always the case, I believe it
+boils down to ease of use / convinience. Combined with the fact that server operators
+derive genuine value out of doing so.
 
-MORE TO COME.
+My goal was simple.
+An instant-messenger with communities that should be as easy to set up as a MC server was back in the day.
+I also want it to be lightweight, especially when there is no activity. Ideally it should
+run well on a old Raspberry Pi.
+MC is also known for its insane modding scene. Something I attribute heavily to it being written in Java.
+But Java still requires one to have a Java compiler and runtime installed. I wanted something even easier.
+So I knew that the first server implementation would have to be in a scripting language.
+Since the first client would be a web app, I decided to keep things symmetrical and have the server be written in
+JavaScript.
+
+It's been a pain. JSDocs and TSserver makes it managable. But interacting with native C APIs is very annoying.
+Node will soon be stabilizing their native SQLite API, so I will probably drop one native binding soon.
+But the other large chunk of native code is the WebRTC SFU, that currently uses MediaSoup.
+Hopefully a better solution to this will present itself someday.
+
+# Features
+
+Here is a quick list of features that TaigaChat currently has:
+- Roles
+- Voice Chat
+- Text Chat
+- Profile Images
+- Public-Private key accounts
+- Notifications
