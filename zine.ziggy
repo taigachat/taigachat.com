@@ -1,7 +1,7 @@
 .zine_version = "0.13.0",
 .site = .simple(.{
     .title = "TaigaChat",
-    .host_url = "https://example.com",
+    .host_url = "https://taigachat.com",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
     .assets_dir_path = "assets",
