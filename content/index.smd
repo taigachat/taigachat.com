@@ -2,6 +2,7 @@
 .title = "Homepage",
 .date = .date("2026-08-17T21:00:00"),
 .layout = "index.shtml",
+.description = "TaigaChat is an open-source instant messenger for communities aiming to provide autonomy and fun",
 ---
 
 []($section.id("index__header"))

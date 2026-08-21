@@ -2,6 +2,7 @@
 .title = "About",
 .date = .date("2026-08-17T21:00:00"),
 .layout = "about.shtml",
+.description = "An explanatory on TaigaChat"
 ---
 
 # Rational
@@ -44,6 +45,16 @@ Node will soon be stabilizing their native SQLite API, so I will probably drop o
 But the other large chunk of native code is the WebRTC SFU, that currently uses MediaSoup.
 Hopefully a better solution to this will present itself someday.
 
+# Goals
+
+- Allow anyone to easily self-host a community
+- Use public-private keys for authentication
+- Avoiding bloat & dependencies
+- Consume few resources
+- Remaining handcoded
+- Readable source code
+- Proper open source license
+
 # Features
 
 Here is a quick list of features that TaigaChat currently has:
@@ -51,5 +62,19 @@ Here is a quick list of features that TaigaChat currently has:
 - Voice Chat
 - Text Chat
 - Profile Images
+- Attachments
 - Public-Private key accounts
 - Notifications
+- Styled text
+
+# Future
+
+Here are some features that TaigaChat will hopefully have in the near future:
+- TaigaChat.js (use as a zero-dependency library on your own website)
+- Direct Messages (à la Signal)
+- QR-code based contact invitations (you can have multiple)
+- Fully offline RYOK authentication (currently disabled)
+- More themes & custom theme loading
+- Proper search
+- Prettier settings menu (currently looks pretty broken)
+- CLI client

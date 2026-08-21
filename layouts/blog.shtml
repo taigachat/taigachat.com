@@ -1,5 +1,6 @@
 <extend template="base.shtml">
 <head id="head">
+	<link rel="prefetch" href="$site.page('').link()">
 	<style>
 		.date {
 			font-size: 0.9em;

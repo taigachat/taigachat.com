@@ -2,24 +2,38 @@
 <html>
 	<head id="head">
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1">
-		<title :text="$site.title"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title :text="$site.custom.get('title_format').fmt($page.title, $site.title)"></title>
 		<link type="text/css" rel="stylesheet" href="$site.asset('style.css').link()">
 		<link rel="icon" type="image/png" href="$site.asset('favicon.png').link()">
+		<link rel="canonical" href="$page.link()">
+		<meta name="description" content="$page.description">
+
+		<meta name="theme-color" content="#FFF">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		
+		<link rel="dns-prefetch" href="//app.taigachat.se">
+
+		<meta name="og:title" content="$page.title">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="$page.description">
+		<meta property="og:url" content="$page.link()">
+		<meta name="og:image" content="$site.asset('favicon.png').link()">
 		<super>
 	</head>
 	<body id="body">
 		<header id="the-topbar">
-			<div id="the-topbar__upper">
+			<a id="the-topbar__upper" href="/">
 				<span id="the-topbar__logo">
 				</span>
 				TaigaChat
-			</div>
+			</a>
 			<nav id="the-topbar__links">
 				<a href="$site.page('').link()">Home</a>
 				<a href="$site.page('about').link()">About</a>
 				<a href="$site.page('blog').link()">Blog</a>
 				<a href="$site.page('screenshots').link()">Screenshots</a>
+				<a href="https://app.taigachat.se">Webapp</a>
 			</nav>
 		</header>
 		<!--<h1 class="site-title" :text="$site.title"></h1>-->

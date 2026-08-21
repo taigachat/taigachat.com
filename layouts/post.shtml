@@ -1,5 +1,7 @@
 <extend template="base.shtml">
 <head id="head">
+	<link rel="prefetch" href="$site.page('').link()">
+
 	<link type="text/css" rel="stylesheet" href="$site.asset('highlight.css').link()">
 	<!-- mathtex -->
 	<link type="text/css" rel="stylesheet" href="$site.asset('Temml-Local.css').link()">

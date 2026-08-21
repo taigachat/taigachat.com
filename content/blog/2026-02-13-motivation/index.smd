@@ -2,6 +2,7 @@
 .title = "Why TaigaChat is Built Different",
 .date = .date("2026-08-10T00:00:00"),
 .layout = "post.shtml",
+.description = "A blog post explaining why TaigaChat is designed the way it is"
 ---
 
 _TL;DR Imagine TaigaChat as Minecraft but as a community-chat with self-hostable login servers._

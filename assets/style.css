@@ -153,6 +153,8 @@ body {
   align-items: center;
   padding: 2mm;
   font-size: 3rem;
+  color: #000;
+  text-decoration: none;
 }
 
 #the-topbar__logo {

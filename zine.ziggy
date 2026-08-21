@@ -7,9 +7,10 @@
     .assets_dir_path = "assets",
     .static_assets = [
         "Temml.woff2",
-        "OpenSans_var.ttf",
         "Nunito_var.ttf",
         "taiga.svg",
     ],
 }),
-
+.custom = .{
+    .title_format = "{} | {}",
+},

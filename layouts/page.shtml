@@ -1,5 +1,6 @@
 <extend template="base.shtml">
 <head id="head">
+	<link rel="prefetch" href="$site.page('').link()">
 </head>
 <div id="the-page">
 	<h1 :text="$page.title"></h1>

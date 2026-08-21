@@ -2,6 +2,7 @@
 .title = "On Aesthetics",
 .date = .date("2026-08-20T01:35:00"),
 .layout = "post.shtml",
+.description = "A quick note on aesthetics in TaigaChat",
 ---
 
 This is a short little post to explain my reasoning with the recent UI skin overhaul I embarked on.

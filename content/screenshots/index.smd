@@ -2,6 +2,7 @@
 .title = "Screenshots",
 .date = .date("2026-08-20T21:00:00"),
 .layout = "page.shtml",
+.description = "Screenshots of TaigaChat running",
 ---
 
 I will gradually be uploading more screenshots of the UI here as I redesign stuff.

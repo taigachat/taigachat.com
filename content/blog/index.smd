@@ -7,6 +7,7 @@
     .layout = "blog.xml",
     .output = "index.xml",
 }],
+.description = "A directory listing of all blogs available on the TaigaChat website",
 ---
 
 _If you find my writing interesting, please consider adding this [RSS url]($link.page('blog').alternative('rss')) to your reader._
