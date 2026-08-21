@@ -119,12 +119,6 @@ footer hr {
     /*font-display: swap*/
     font-display: optional
 }
-/*@font-face {
-    font-family: 'OpenSans';
-    src: url("/OpenSans_var.ttf") format("opentype");
-    font-display: optional
-}*/
-
 
 body {
   margin: 0;
@@ -172,7 +166,8 @@ body {
   padding: 2mm 3mm 1mm 3mm;
   color: #8ef;
   display: flex;
-  gap: 12mm;
+  gap: 2mm 12mm;
+  flex-flow: wrap;
 }
 
 #the-topbar__links a {
@@ -228,10 +223,18 @@ body {
   gap: 6mm;
 }
 
+@media (width <= 200mm) {
+  .tcw-split-pane {
+    flex-flow: column-reverse;
+    align-items: center;
+  }
+}
+
 .tcw-split-pane img {
   /* Don't take more than we can offer. */
   width: 100%;
 }
+
 
 .tcw-split-pane-50 div {
   flex-shrink: 1;
