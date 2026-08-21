@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head id="head">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>About | TaigaChat</title>
+		<link type="text/css" rel="stylesheet" href="/style.css">
+		<link rel="icon" type="image/png" href="/favicon.png">
+		<link rel="canonical" href="/about/">
+		<meta name="description" content="An explanatory on TaigaChat">
+
+		<meta name="theme-color" content="#FFF">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		
+		<link rel="dns-prefetch" href="//app.taigachat.se">
+
+		<meta name="og:title" content="About">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="An explanatory on TaigaChat">
+		<meta property="og:url" content="/about/">
+		<meta name="og:image" content="/favicon.png">
+		
+
+	</head>
+	<body id="body">
+		<header id="the-topbar">
+			<a id="the-topbar__upper" href="/">
+				<span id="the-topbar__logo">
+				</span>
+				TaigaChat
+			</a>
+			<nav id="the-topbar__links">
+				<a href="/">Home</a>
+				<a href="/about/">About</a>
+				<a href="/blog/">Blog</a>
+				<a href="/screenshots/">Screenshots</a>
+				<a href="https://app.taigachat.se">Webapp</a>
+			</nav>
+		</header>
+		<!--<h1 class="site-title" :text="$site.title"></h1>-->
+		<div id="the-page">
+			<h1>Rational</h1><p>Chat logs are memories. Important memories. Maybe almost as important as images? Many of us might have important photo memories that now only exist in a chat log somewhere. Back in 2021 I decided that some random corporation should not be able to strip them off me at without a moments notice. Nor should one have to risk suddenly losing contact with distant friends or old co-workers. I decided I would solve this problem for myself.</p><p>Memories should be yours and yours alone to decide how to preserve. Not something to be rudely datamined and sold off. I’m sure you’ve heard this exact pitch before. But a promise of being respectful can always be violated. It is better to be in control of that decision. And self-hosting is the only reliable way to remain in control.</p><p>When it comes to my generation, almost everyone has a close friend that has self hosted something. That something is in 90% of cases a good old Minecraft server. Therefor I had to consider why this was the case. As is always the case, I believe it boils down to ease of use / convinience. Combined with the fact that server operators derive genuine value out of doing so.</p><p>My goal was simple. An instant-messenger with communities that should be as easy to set up as a MC server was back in the day. I also want it to be lightweight, especially when there is no activity. Ideally it should run well on a old Raspberry Pi. MC is also known for its insane modding scene. Something I attribute heavily to it being written in Java. But Java still requires one to have a Java compiler and runtime installed. I wanted something even easier. So I knew that the first server implementation would have to be in a scripting language. Since the first client would be a web app, I decided to keep things symmetrical and have the server be written in JavaScript.</p><p>It’s been a pain. JSDocs and TSserver makes it managable. But interacting with native C APIs is very annoying. Node will soon be stabilizing their native SQLite API, so I will probably drop one native binding soon. But the other large chunk of native code is the WebRTC SFU, that currently uses MediaSoup. Hopefully a better solution to this will present itself someday.</p><h1>Goals</h1><ul><li>Allow anyone to easily self-host a community</li><li>Use public-private keys for authentication</li><li>Avoiding bloat & dependencies</li><li>Consume few resources</li><li>Remaining handcoded</li><li>Readable source code</li><li>Proper open source license</li></ul><h1>Features</h1><p>Here is a quick list of features that TaigaChat currently has:</p><ul><li>Roles</li><li>Voice Chat</li><li>Text Chat</li><li>Profile Images</li><li>Attachments</li><li>Public-Private key accounts</li><li>Notifications</li><li>Styled text</li></ul><h1>Future</h1><p>Here are some features that TaigaChat will hopefully have in the near future:</p><ul><li>TaigaChat.js (use as a zero-dependency library on your own website)</li><li>Direct Messages (à la Signal)</li><li>QR-code based contact invitations (you can have multiple)</li><li>Fully offline RYOK authentication (currently disabled)</li><li>More themes & custom theme loading</li><li>Proper search</li><li>Prettier settings menu (currently looks pretty broken)</li><li>CLI client</li></ul>
+		</div>
+		<footer id="the-footer">
+			<div>
+				Site for
+				<a href="/">TaigaChat</a>
+				by
+				<a href="https://alexander.rs">Alexander</a>
+				(2021 to 2026)
+			</div>
+			
+			<!--<hr>
+			<h5>SITE UNDER CONSTRUCTION</h5>
+			<img src="$site.asset('under-construction.gif').link()" width=90>-->
+		</footer>
+	</body>
+</html>
